@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     
     <parent>
@@ -21,9 +20,8 @@
         <java.version>17</java.version>
     </properties>
     
-    <!-- Specify packaging as WAR -->
     <packaging>war</packaging>
-
+    
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -48,17 +46,19 @@
             <artifactId>mysql-connector-j</artifactId>
             <scope>runtime</scope>
         </dependency>
-        
         <!-- Add other dependencies here as needed -->
     </dependencies>
     
-    <!-- Configure the build to create a WAR file -->
     <build>
-        <finalName>dvr</finalName> <!-- Customize the WAR file name if needed -->
+        <finalName>dvr</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <!-- Specify the main class for your Spring Boot application -->
+                    <mainClass>com.project.dvr.DvrApplication</mainClass>
+                </configuration>
             </plugin>
         </plugins>
     </build>
